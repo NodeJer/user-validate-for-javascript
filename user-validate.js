@@ -11,10 +11,10 @@
   }
 })(window, window.Zepto||window.jQuery, function($){
 
-  function userVerification(username){
-    var email = /\w+((-w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+/.test(string);
-    var phone = /0?(13|14|15|18)[0-9]{9}/.test(string);
-    var userName = /^[A-Za-z0-9_\-\u4e00-\u9fa5]{6,25}$/.test(string);
+  function userValidate(username){
+    var email = /\w+((-w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+/.test(username);
+    var phone = /0?(13|14|15|18)[0-9]{9}/.test(username);
+    var userName = /^[A-Za-z0-9_\-\u4e00-\u9fa5]{6,25}$/.test(username);
     
     if(!email && !phone && !userName){
       return false;
@@ -25,6 +25,6 @@
     return false;
   }
 
-  return userVerification;
+  return userValidate;
 
 });
